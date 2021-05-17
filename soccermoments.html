@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css">
+		
+		#bird{
+			top: 150px;
+			width:350px;
+			height:250px;
+			border:1px solid black;
+			background-size:cover;
+			background-image: center;
+			position: relative;
+			transition: 2s;
+		}
+	</style>
+</head>
+<body>
+
+<center><div id="bird">
+
+</div></center>
+
+<audio id="Zidane" src="Zidane.mp3"></audio>
+
+<audio  id="aguero" src="aguero.mp3"></audio>
+
+<script type="text/javascript">
+
+
+	
+	var bird = document.getElementById("bird");
+var x = 0;
+
+bird.addEventListener("click", function(){
+	x = x+1;
+	console.log(x);
+
+	if (x%2 == 0) {
+		Zidane.play();
+		aguero.pause();
+		bird.style.backgroundColor = "";
+		bird.style.backgroundImage = "url(https://i.guim.co.uk/img/media/f02d99c0c61e788e3b293f24b7c0872233e70252/0_43_2640_1584/master/2640.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=7f04660a890c767bf297b96d96579999)";
+
+	}
+
+
+	else if (x%2 == 1) {
+		bird.style.backgroundColor = "";
+		aguero.play();
+		Zidane.pause();
+		 bird.style.backgroundImage = "url(https://a.espncdn.com/photo/2020/0512/r698118_1296x729_16-9.jpg)";
+	}
+
+
+
+
+})
+
+
+
+</script>
+
+</body>
+</html>

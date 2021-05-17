@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css">
+		
+		#bird{
+			width:200px;
+			height:200px;
+			border:1px solid black;
+			background-size:cover;
+		
+
+		}
+		.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  top: 50%;
+  left: 43%;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+	</style>
+</head>
+<body>
+<center><div id="instead">
+<h1>instead of cursing...</h1>
+</div></center>
+<center><div id="bird">
+
+</div></center>
+
+
+<audio id="holyduck" src="holyduck.mp3"></audio>
+
+<audio  id="holyshot" src="holyshot.mp3"></audio>
+
+<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Conversations</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="file:///Users/student/Desktop/repositories/c24eb.github.io/holyshotconvo.html"target="_blank">Holy Shot</a>
+    <a href="file:///Users/student/Desktop/repositories/c24eb.github.io/holyduck.html"target="_blank">Holy Duck</a>
+    
+  </div>
+</div>
+
+<div id="background"></div>
+
+<script type="text/javascript">
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+	
+	var bird = document.getElementById("bird");
+var x = 0;
+
+bird.addEventListener("click", function(){
+	x = x+1;
+	console.log(x);
+
+	if (x%2 == 0) {
+		holyduck.play();
+		holyshot.pause();
+		bird.style.backgroundColor = "";
+		bird.style.backgroundImage = "url(https://www.amsterdamduckstore.com/wp-content/uploads/2015/07/priest-rubber-duck-front-e1569573132413.jpg)";
+	}
+
+
+	else if (x%2 == 1) {
+		bird.style.backgroundColor = "";
+		holyshot.play();
+		holyduck.pause();
+		 bird.style.backgroundImage = "url(https://memeguy.com/photos/images/when-holy-shit-autocorrects-to-holy-shot-349646.jpg)";
+	} 
+
+
+})
+
+
+
+</script>
+
+
+</body>
+</html>

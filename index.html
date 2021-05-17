@@ -1,77 +1,139 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.dropbtn {
+  background-color: black;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  animation: colorchange 2s infinite; 
+  top: -100px;
+  position: absolute;
+  left: 250px;
+  width: 200px;
+}
 
-	<style type="text/css">
-	#cloud{
-		width:200px;
-		height:150px;
-		left: 200px;
-		background-color: lightblue;
-		background-color: navy;
-		background-size:cover;
-		position: relative;
-	
+.behind{
+    background-color:lightblue;
+    position:absolute;
+    width: 120%;
+    height:100%;
+    top:0;
+    z-index:-1;
+    left: -5%;
+
+}
+
+
+@keyframes colorchange
+{
+  0%   {background: pink;}
+  25%  {background: red;}
+  50%  {background: violet;}
+  75%  {background: lightblue;}
+  100% {background: teal;}
+}
 
 
 
-	}	
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
 
-	#link1 {
-		position: relative;
-		font: serif;
-		font-size: 30px;
-		left: 5%;
-		top: -60px;
-		color: hotpink;
+.dropdown {
+  position: relative;
+  display: inline-block;
+  bottom: 70%;
+  left: 0%;
+}
 
-	}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
 
-	body{
-		background-color: lightblue;
-	}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
 
-	#link2{
-		top: -90px;
-		left: 20%;
-		font-size: 30px;
-		position: relative;
-		color: hotpink;
+.dropdown a:hover {background-color: #ddd;}
 
-	}
+.show {display: block;}
+.cookie{
+width: 50px;
+height: 50px;
+margin: -1.9px;
+display: inline-block;
+background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwqYw_WYt2JAftoyKEwTLSS_yOJa91Kw46vw&usqp=CAU);
+background-size: contain;
 
-	#image2 {
-		background-image: url(https://image.similarpng.com/very-thumbnail/2020/08/3D-soccer-ball-on-transparent-background-PNG.png);
-		background-color: red;
-		left: 20px;
-		top: 100px;
-	}
 
-	</style>
+}
+
+</style>
 </head>
+
 <body>
 
-<div id="cloud">
+<h2>Etien's Website</h2>
+<p>Click on the button for a cookie.</p>
+
+<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Click me</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="soccermoments.html">Projects</a>
+    <a href="#Journal">Journal</a>
+    <a href="file:///Users/student/Desktop/repositories/c24eb.github.io/Insteadofcursing.html" target="blank_">Fav. Project</a>
+  </div>
+</div>
+<div id="background"></div>
+
+<script>
+
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+function makeCookie (x){
+var cookie = document.createElement ('div');
+cookie.classList.add('cookie');
+document.body.appendChild(cookie)
+
+//cookie.innerText = x;
+}
+
+setInterval (makeCookie, 100)
+for(var i=1; i<1; i = i+1){makeCookie(i)}
+	CH = Parameter(10);
 	
-</div>
-<a href="project.html">
-<div id="link1">
-	project
 
-</div>
-<div id="link2">
-	journal
-</div>
 
-</a>
-
-<div id="image2">
-	
-</div>
+</script>
+<div class="behind"></div>
 </body>
 </html>
-
-
-
-
